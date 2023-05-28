@@ -88,6 +88,7 @@ const select = {
       thisProduct.formInputs = thisProduct.form.querySelectorAll(select.all.formInputs);
       thisProduct.cartButton = thisProduct.element.querySelector(select.menuProduct.cartButton);
       thisProduct.priceElem = thisProduct.element.querySelector(select.menuProduct.priceElem);
+      thisProduct.imageWrapper = thisProduct.element.querySelector(select.menuProduct.imageWrapper);
     }
 
     initAccordion(){
@@ -153,9 +154,16 @@ const select = {
           //console.log(optionId, option);
           console.log(paramId, option, formData[paramId], option.default);
           // check if it is checked
+
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
+          console.log(optionImage);
+
           if(formData[paramId] && formData[paramId].includes(optionId)){
             console.log('Jest zaznaczony');
             // check if it not dwfault option
+            if(optionImage){
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            }
             if(!option.default){
               console.log('Ten nie jest domyslny', option.price);
               price += option.price;
@@ -163,6 +171,9 @@ const select = {
           // check if if no checked
           } else {
             console.log('Nie jest zaznaczony');
+            if(optionImage){
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
             // check if it is default
             if(option.default){
               console.log('Ten jest domyslny', option.price);

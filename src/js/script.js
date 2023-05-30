@@ -43,8 +43,8 @@ const select = {
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 1,
-      defaultMax: 9,
+      defaultMin: 0,
+      defaultMax: 10,
     }
   };
 
@@ -217,10 +217,9 @@ const select = {
       const thisWidget = this;
       //Convers to int
       const newValue = parseInt(value);
-      console.log('value: ', value);
 
       /* TODO: Add Validation */
-      if(thisWidget.value !== newValue && !isNaN(newValue) && settings.amountWidget.defaultMin <= thisWidget.value && thisWidget.value >= settings.amountWidget.defaultMax){ // !isNaN(newValue) - negative function Not a Number 
+      if(thisWidget.value !== newValue && !isNaN(newValue) && value >= settings.amountWidget.defaultMin && value <= settings.amountWidget.defaultMax){ // !isNaN(newValue) - negative function Not a Number 
         thisWidget.value = newValue;
       }
       thisWidget.input.value = thisWidget.value;

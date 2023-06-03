@@ -409,19 +409,21 @@
         subtotalPrice += product.price;
       }
       if(totalNumber == 0){
-       // thisCart.dom.deliveryFee.innerHTML  = 0;
         thisCart.totalPrice = 0;
-
       } else {
         thisCart.totalPrice = subtotalPrice + deliveryFee;
-        thisCart.dom.deliveryFee.innerHTML  = deliveryFee;
       }
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
       thisCart.dom.totalNumber.innerHTML  = totalNumber;
+      thisCart.dom.deliveryFee.innerHTML  = deliveryFee;
       for (let price of thisCart.dom.totalPrice){
         price.innerHTML = thisCart.totalPrice;
       }
-      console.log(totalNumber, subtotalPrice, thisCart.totalPrice);
+
+      if(thisCart.totalPrice ==0){
+        thisCart.dom.deliveryFee.innerHTML  = 0;
+      }
+      //console.log(totalNumber, subtotalPrice, thisCart.totalPrice);
     }
 
     remove(product){

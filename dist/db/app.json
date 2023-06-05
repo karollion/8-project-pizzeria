@@ -204,141 +204,42 @@
   ],
   "orders": [
     {
-      "address": "555666777",
-      "phone": "morske zdroje",
-      "totalPrice": 74,
-      "subtotalPrice": 54,
-      "totalNumber": 5,
+      "address": "",
+      "phone": "",
+      "totalPrice": 29,
+      "subtotalPrice": 9,
+      "totalNumber": 1,
       "deliveryFee": 20,
       "products": [
         {
           "id": "cake",
-          "amount": 4,
-          "price": 36,
+          "amount": 1,
+          "price": 9,
           "priceSingle": 9,
           "name": "Zio Stefano's Doughnut",
           "params": {}
-        },
-        {
-          "id": "pizza",
-          "amount": 1,
-          "price": 18,
-          "priceSingle": 18,
-          "name": "Nonna Alba's Pizza",
-          "params": {
-            "sauce": {
-              "label": "Sauce",
-              "options": {
-                "tomato": "Tomato"
-              }
-            },
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "greenPeppers": "Green peppers",
-                "mushrooms": "Mushrooms",
-                "basil": "Fresh basil"
-              }
-            },
-            "crust": {
-              "label": "pizza crust",
-              "options": {
-                "standard": "standard"
-              }
-            }
-          }
         }
       ],
       "id": 1
     },
     {
-      "address": "555666777",
-      "phone": "morske zdroje",
-      "totalPrice": 76,
-      "subtotalPrice": 56,
-      "totalNumber": 5,
+      "address": "",
+      "phone": "",
+      "totalPrice": 29,
+      "subtotalPrice": 9,
+      "totalNumber": 1,
       "deliveryFee": 20,
       "products": [
         {
           "id": "cake",
-          "amount": 4,
-          "price": 36,
+          "amount": 1,
+          "price": 9,
           "priceSingle": 9,
           "name": "Zio Stefano's Doughnut",
           "params": {}
-        },
-        {
-          "id": "pizza",
-          "amount": 1,
-          "price": 20,
-          "priceSingle": 20,
-          "name": "Nonna Alba's Pizza",
-          "params": {
-            "sauce": {
-              "label": "Sauce",
-              "options": {
-                "tomato": "Tomato"
-              }
-            },
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "redPeppers": "Red peppers",
-                "greenPeppers": "Green peppers",
-                "mushrooms": "Mushrooms",
-                "basil": "Fresh basil"
-              }
-            },
-            "crust": {
-              "label": "pizza crust",
-              "options": {
-                "standard": "standard"
-              }
-            }
-          }
         }
       ],
       "id": 2
-    },
-    {
-      "address": "morske zdroje",
-      "phone": "555666777",
-      "totalPrice": 38,
-      "subtotalPrice": 18,
-      "totalNumber": 2,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 2,
-          "price": 18,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 3
-    },
-    {
-      "address": "morske zdroje",
-      "phone": "555666777",
-      "totalPrice": 38,
-      "subtotalPrice": 18,
-      "totalNumber": 2,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "cake",
-          "amount": 2,
-          "price": 18,
-          "priceSingle": 9,
-          "name": "Zio Stefano's Doughnut",
-          "params": {}
-        }
-      ],
-      "id": 4
     }
   ]
 }

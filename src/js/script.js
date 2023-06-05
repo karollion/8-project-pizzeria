@@ -483,6 +483,12 @@
       }).then(function(parsedResponse){
         console.log('parsedResponse', parsedResponse);
       });
+      
+      /* Remove products from Cart after order */
+      thisCart.products = [];
+      console.log('Products after order: ', thisCart.products);
+      thisCart.dom.productList.innerHTML = '';
+      thisCart.update();
     }
   }
 

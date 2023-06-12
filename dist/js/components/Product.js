@@ -77,6 +77,7 @@ class Product {
       thisProduct.processOrder();
       thisProduct.addToCart();
       thisProduct.prepareCartProduct();
+      thisProduct.backToDefault();
     });
   }
   processOrder() {
@@ -187,6 +188,31 @@ class Product {
       }
     }
     return cartProductParams;
+  }
+  backToDefault() {
+    const thisProduct = this;
+
+    const formData = utils.serializeFormToObject(thisProduct.form);
+    for(let paramId in thisProduct.data.params) {
+      const param = thisProduct.data.params[paramId];
+      for(let optionId in param.options) {
+        const option = param.options[optionId];
+        if(formData[paramId] && formData[paramId].includes(optionId)){
+          if(!option.default){
+            console.log(paramId, optionId,' checked, not default, must be unchecked');
+            const elem = thisProduct.form.querySelector('#' + optionId);
+            elem.removeAttribute('checked', '');
+          }
+        } else {
+          if(option.default){
+            console.log(paramId, optionId,'Not checked, default, must be checked');
+            const elem = thisProduct.form.querySelector('#' + optionId);
+            elem.setAttribute('checked', '');
+            
+          }
+        }
+      }
+    }
   }
 }
 

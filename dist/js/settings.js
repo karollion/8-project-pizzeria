@@ -75,6 +75,7 @@ export  const classNames = {
   },
   cart: {
     wrapperActive: 'active',
+    error: 'error',
   },
   booking: {
     loading: 'loading',

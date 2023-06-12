@@ -101,28 +101,39 @@ class Cart{
     for(let prod of thisCart.products) {
       payload.products.push(prod.getData());
     }
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-    };
     
-    fetch(url, options)
-      .then(function(response){
-        return response.json();
-      }).then(function(parsedResponse){
-        console.log('parsedResponse', parsedResponse);
-      });
-    
-    /* Remove products from Cart after order */
-    thisCart.products = [];
-    console.log('Products after order: ', thisCart.products);
-    thisCart.dom.productList.innerHTML = '';
-    thisCart.dom.address.value = '';
-    thisCart.dom.phone.value = '';
-    thisCart.update();
+    if(payload.phone.length > 0 && payload.products.length > 0){
+      if(payload.address.length > 0 && payload.products.length > 0){
+        const options = {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        };
+        
+        fetch(url, options)
+          .then(function(response){
+            return response.json();
+          }).then(function(parsedResponse){
+            console.log('parsedResponse', parsedResponse);
+          });
+        
+        /* Remove products from Cart after order */
+        thisCart.products = [];
+        //console.log('Products after order: ', thisCart.products);
+        thisCart.dom.productList.innerHTML = '';
+        thisCart.dom.address.value = '';
+        thisCart.dom.phone.value = '';
+        thisCart.update();
+        thisCart.dom.phone.classList.remove(classNames.cart.error);
+        thisCart.dom.address.classList.remove(classNames.cart.error);
+      } else {
+        thisCart.dom.address.classList.add(classNames.cart.error);
+      }
+    } else {
+      thisCart.dom.phone.classList.add(classNames.cart.error);
+    }
   }
 }
 

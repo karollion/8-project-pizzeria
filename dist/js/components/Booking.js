@@ -35,20 +35,33 @@ class Booking{
       ],
     };
 
-    console.log (params);
+    //console.log (params);
     const urls = {
       booking:      settings.db.url + '/' + settings.db.booking + '?' + params.booking.join('&'),
       eventsCurrent: settings.db.url + '/' + settings.db.event  + '?' + params.eventsCurrent.join('&'),
       evestsRepeat: settings.db.url + '/' + settings.db.event   + '?' + params.evestsRepeat.join('&'),
     };
-    console.log(urls);
+    //console.log(urls);
 
-    fetch(urls.booking)
-      .then(function(bookingResponse){
-        return bookingResponse.json();
+    Promise.all([
+      fetch(urls.booking),
+      fetch(urls.eventsCurrent),
+      fetch(urls.evestsRepeat),
+    ])
+      .then(function(allResponses){
+        const bookingResponse = allResponses[0];
+        const eventsCurrentResponse = allResponses[1];
+        const evestsRepeatResponse = allResponses[2];
+        return Promise.all([
+          bookingResponse.json(),
+          eventsCurrentResponse.json(),
+          evestsRepeatResponse.json(),
+        ]);
       })
-      .then(function(bookings){
+      .then(function([bookings, eventsCurrent, evestsRepeat]){
         console.log(bookings);
+        console.log(eventsCurrent);
+        console.log(evestsRepeat);
       });
   }
 
@@ -77,9 +90,10 @@ class Booking{
     thisBooking.dom.hoursAmount.addEventListener('updated', function(){
     });
 
-    thisBooking.date = new DatePicker(thisBooking.dom.date);
+    thisBooking.datePicker = new DatePicker(thisBooking.dom.date);
 
-    thisBooking.hour = new HourPicker(thisBooking.dom.hour);
+    
+    thisBooking.hourPicker = new HourPicker(thisBooking.dom.hour);
   }
   
 }

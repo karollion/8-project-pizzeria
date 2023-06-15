@@ -37,11 +37,14 @@ class Booking{
 
     //console.log (params);
     const urls = {
-      booking:      settings.db.url + '/' + settings.db.booking + '?' + params.booking.join('&'),
-      eventsCurrent: settings.db.url + '/' + settings.db.event  + '?' + params.eventsCurrent.join('&'),
-      evestsRepeat: settings.db.url + '/' + settings.db.event   + '?' + params.evestsRepeat.join('&'),
+      booking:      settings.db.url  + '/' + settings.db.booking 
+                                     + '?' + params.booking.join('&'),
+      eventsCurrent: settings.db.url + '/' + settings.db.event  
+                                     + '?' + params.eventsCurrent.join('&'),
+      evestsRepeat: settings.db.url  + '/' + settings.db.event   
+                                     + '?' + params.evestsRepeat.join('&'),
     };
-    //console.log(urls);
+    console.log(urls);
 
     Promise.all([
       fetch(urls.booking),

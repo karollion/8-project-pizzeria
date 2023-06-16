@@ -7,9 +7,11 @@ import HourPicker from './HourPicker.js';
 class Booking{
   constructor(element){
     const thisBooking = this;
+    thisBooking.tableReservation = [];
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
+    thisBooking.addClickListenerToTable();
   }
 
   getData(){
@@ -90,7 +92,7 @@ class Booking{
         }
       }
     }
-    console.log('booked', thisBooking.booked);
+    //console.log('booked', thisBooking.booked);
     thisBooking.updateDOM();
   }
 
@@ -179,6 +181,38 @@ class Booking{
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
+  }
+
+  addClickListenerToTable(){
+    const thisBooking = this;
+
+    const tables = document.querySelectorAll(select.booking.tables)
+    
+    tables.forEach(table => {
+      //if(table.classList.contains(classNames.booking.tableBooked)){}
+      table.addEventListener("click", (event) => {
+        thisBooking.tableClickHandler(event);
+      })
+    })
+  }
+
+  tableClickHandler(event){
+    const thisBooking = this;
+    event.preventDefault();
+    
+    const tableId = event.target.getAttribute(settings.booking.tableIdAttribute);
+    const table = event.target;
+    
+    if(!table.classList.contains(classNames.booking.tableBooked)){
+      if(!thisBooking.tableReservation.includes(tableId) && thisBooking.tableReservation == 0){
+        event.target.classList.add(classNames.booking.tableReservation);
+        thisBooking.tableReservation.push(tableId);
+      } else {
+        event.target.classList.remove(classNames.booking.tableReservation);
+        thisBooking.tableReservation.pop(tableId);
+      }
+    }
+    console.log(thisBooking.tableReservation);
   }
   
 }

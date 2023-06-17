@@ -688,10 +688,10 @@ input.error, select.error {
   background: #333;
   opacity: 0.4;
 }
-.floor-plan .table.reservation {
+.floor-plan .table.selected {
   color: #999999;
 }
-.floor-plan .table.reservation::after {
+.floor-plan .table.selected::after {
   position: absolute;
   content: "";
   width: 100%;

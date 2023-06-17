@@ -200,15 +200,15 @@ class Product {
         if(formData[paramId] && formData[paramId].includes(optionId)){
           if(!option.default){
             console.log(paramId, optionId,' checked, not default, must be unchecked');
-            const elem = thisProduct.form.querySelector('#' + optionId);
-            elem.removeAttribute('checked', '');
+            //const elem = thisProduct.form.querySelector('#' + optionId);
+            //elem.checked = false;  <== działa dla checkboxów
           }
         } else {
           if(option.default){
             console.log(paramId, optionId,'Not checked, default, must be checked');
-            const elem = thisProduct.form.querySelector('#' + optionId);
-            elem.setAttribute('checked', '');
-            
+            //const elem = thisProduct.form.querySelector('#' + optionId);
+            //elem.setAttribute('checked', '');
+            //elem.checked = true;  <== działa dla checkboxów
           }
         }
       }

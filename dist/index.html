@@ -105,13 +105,16 @@
 
   <script id="template-home-widget" type="text/x-handlebars-template">
     <div class="booking-widget">
-      <div>
+      <div class="navigation">
         <div class="nav-buttons">
-          <div class="order center">
-            <h2>Order online</h2>
+          <div class="order center" id-data="order">
+            <h2 id-data="order">Order online</h2>
+            <p>Delicious food delivered to your door</p>
+
           </div>
-          <div class="booking center">
-            <h2>Book a table</h2>
+          <div class="booking center" id-data="booking">
+            <h2 id-data="booking">Book a table</h2>
+            <p>Book a table in our wonderful restaurant</p>
           </div>
         </div>
         <div class="opening-hours center">
@@ -122,38 +125,60 @@
       <div>
         <div class="carousel" data-flickity='{ "autoPlay": 3000 }'>
           <div class="carousel-cell">
-            <div>
+            <div class="opinion">
               <div class="image-06"></div>
-              <h2>Amazing service!</h2>
-              <p>Lorem ipsum</p>
-              <p>- Margaret Osborne</p>
+              <div class="image-description">
+                <h2>Amazing service!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis
+                euismod consequat. In fermentum ornare ex sed lobortis.</p>                
+                <p>- Margaret Osborne</p>
+              </div>
             </div>
           </div>
           <div class="carousel-cell">
-            <div>
+            <div class="opinion">
               <div class="image-06"></div>
-              <h2>Amazing service!</h2>
-              <p>Lorem ipsum</p>
-              <p>- Margaret Osborne</p>
+              <div class="image-description">
+                <h2>Delicious food!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis
+                euismod consequat. In fermentum ornare ex sed lobortis.</p>                
+                <p>- Roberto Moreno</p>
+              </div>
             </div>
           </div>
           <div class="carousel-cell">
-            <div>
+            <div class="opinion">
               <div class="image-06"></div>
-              <h2>Amazing service!</h2>
-              <p>Lorem ipsum</p>
-              <p>- Margaret Osborne</p>
+              <div class="image-description">
+                <h2>Great pizza!</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed convallis
+                euismod consequat. In fermentum ornare ex sed lobortis.</p>                
+                <p>- Izaak Bor</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div class="gallery">
-        <div class="image-00"></div>
-        <div class="image-01"></div>
-        <div class="image-02"></div>
-        <div class="image-03"></div>
-        <div class="image-04"></div>
-        <div class="image-05"></div>
+        <!-- font size do serduszek 22px -->
+        <div class="image-00">
+          <div class="icons"></div>
+        </div>
+        <div class="image-01">
+          <div class="icons"></div>
+        </div>
+        <div class="image-02">
+          <div class="icons"></div>
+        </div>
+        <div class="image-03">
+          <div class="icons"></div>
+        </div>
+        <div class="image-04">
+          <div class="icons"></div>
+        </div>
+        <div class="image-05">
+          <div class="icons"></div>
+        </div>
       </div>
       <a href="#" id="link-instagram">View more on instagram</a>
     </div>

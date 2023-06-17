@@ -96,7 +96,7 @@ const app = {
 
     const homeHTML = document.querySelector(select.containerOf.home);
 
-    thisApp.homePage = new Home(homeHTML);
+    thisApp.homePage = new Home(homeHTML, thisApp);
   },
 
   init: function(){

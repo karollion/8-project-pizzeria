@@ -74,6 +74,10 @@ export const select = {
   nav: {
     links: '.main-nav a',
   },
+  home: {
+    homeHeader: '.nav-buttons',
+    dataId: 'id-data',
+  },
 };
   
 export  const classNames = {
@@ -118,7 +122,7 @@ export  const settings = {
     tableIdAttribute: 'data-table',
   },
   db: {
-    url: '//localhost:3131',
+    url: '//' + window.location.hostname + (window.location.hostname=='localhost' ? ':3131' : ''),
     products: 'products',
     order: 'orders',
     booking: 'bookings',

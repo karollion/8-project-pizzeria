@@ -17,6 +17,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 6px;
+
+    h2 {
+      margin: 0;
+    }
   }
 
   .center {
@@ -33,19 +37,6 @@
     width: 299px;
     flex-flow: column;
     align-content: center;
-    transition: $transition;
-
-    p {
-      cursor: pointer;
-      font-size: 10px;
-      display: none;
-    }
-
-    &:hover{
-      p{
-        display: block;
-      }
-    }
   }
 
   .booking{
@@ -57,20 +48,31 @@
     width: 299px;
     flex-flow: column;
     align-content: center;
-    transition: $transition;
+  } 
 
-    p {
-      cursor: pointer;
-      font-size: 10px;
+  .opi{
+    cursor: pointer;
+    font-size: 0px;
+    
+    transition: 1s all;
+
+    p{
       display: none;
+      opacity: 0;
     }
 
     &:hover{
+      font-size: 10px;
+      
       p{
         display: block;
+        opacity: 1;
       }
     }
   }
+
+    
+  
 
   .opening-hours {
     border-radius: 4px;
@@ -101,11 +103,6 @@
     align-content: space-between;
     margin-bottom: 30px;
     
-    .icons{
-      background: rgba(0, 0, 0, 0.5);
-      width: 100%;
-      height: 100%;
-    }
     .image-00{
       background: url("../images/assets/pizza-4.jpg") no-repeat center center;
       background-size: cover;
@@ -149,6 +146,30 @@
       width: 193px;
     }
   }
+
+  .icons{
+    background: rgba(73, 72, 72, 0);
+    width: 100%;
+    height: 100%;
+    gap: 8px;
+    
+    font-size: 0;
+    transition: $transition;
+
+    &:hover{
+      font-size: 22px;
+      background: rgba(73, 72, 72, 0.3);
+    }
+  }
+
+  .icons i {
+    color: $color-light;
+    transition: $transition;
+    &:hover {
+      color: $color-main;
+    }
+  }
+
   #link-instagram {
     color: $color-main;
   }
